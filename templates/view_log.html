@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card mb-4">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <div>
+            <i class="fas fa-file-code me-2"></i>{{ log_filename }}
+        </div>
+        <div>
+            <a href="/download_log/{{ log_filename }}" class="btn btn-sm btn-secondary">
+                <i class="fas fa-download me-1"></i>Scarica
+            </a>
+        </div>
+    </div>
+    <div class="card-body">
+        {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+        {% endif %}
+        
+        <form method="POST">
+            <div class="row mb-4">
+                <div class="col-md-8">
+                    <h5>Filtra Colonne:</h5>
+                    <div class="d-flex flex-wrap">
+                        {% for column in all_available_columns %}
+                        <div class="form-check me-3 mb-2">
+                            <input class="form-check-input" type="checkbox" name="columns" 
+                                   value="{{ column }}" id="col{{ loop.index }}"
+                                   {{ 'checked' if column in selected_columns }}>
+                            <label class="form-check-label" for="col{{ loop.index }}">
+                                {{ column }}
+                            </label>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex align-items-end">
+                    <div>
+                        <button type="submit" class="btn btn-primary me-2">
+                            <i class="fas fa-filter me-1"></i>Applica Filtri
+                        </button>
+                        <button type="submit" name="reset_filters" class="btn btn-outline-secondary">
+                            <i class="fas fa-redo me-1"></i>Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        
+        <form method="POST" action="/analyze_filtered_logs/{{ log_filename }}">
+            <input type="hidden" name="columns" value="{{ selected_columns }}">
+            <button type="submit" class="btn btn-warning mb-3">
+                <i class="fas fa-robot me-2"></i>Analizza Log Filtrato con AI
+            </button>
+        </form>
+        
+        <div class="table-responsive log-container">
+            <table class="table table-striped table-bordered">
+                <thead class="table-light">
+                    <tr>
+                        {% for column in output_columns %}
+                        <th>{{ column }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in output_rows %}
+                    <tr>
+                        {% for cell in row %}
+                        <td>{{ cell }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
