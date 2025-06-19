@@ -1,12 +1,16 @@
+<div align="center">
+
+# Zeek Web GUI Analyzer
+
+**🔍 The first Zeek Web GUI with built-in AI to analyze your PCAP files!**
+
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![GitHub release (latest by date)](https://img.shields.io/badge/release-v1.0-blue)](https://github.com/Gabbo01/ZeekWG/releases)
 [![Linkedin](https://img.shields.io/badge/Linked-in-blue)](https://www.linkedin.com/in/gabriele-bencivenga-93797b147/)
 
-# Zeek Web GUI Analyzer
+<img src="images/dash1.png" alt="Zeek Web GUI Screenshot" style="border-radius:8px; margin-top:20px"/>
 
-**The first Zeek Web GUI with built-in AI to analyze your PCAP files!**
-
-![Zeek Web GUI Screenshot](images/dash1.png)
+</div>
 
 ---
 
@@ -26,103 +30,106 @@
 
 ## 🚀 Features
 
-1. **PCAP/PCAPNG Upload**  
-   Easily upload `.pcap` or `.pcapng` files through the web interface.
+- 📁 **PCAP/PCAPNG Upload**  
+  Easily upload `.pcap` or `.pcapng` files through the web interface.
 
-2. **Automatic Log Generation with Zeek**  
-   Uploaded files are processed using Zeek, generating 20+ types of logs for in-depth analysis.
+- ⚙️ **Automatic Log Generation with Zeek**  
+  Uploaded files are processed using Zeek, generating 20+ types of logs.
 
-3. **Log Filtering Interface**  
-   Browse and filter logs conveniently through the GUI to focus on relevant network activity.
+- 🔍 **Log Filtering Interface**  
+  Browse and filter logs through the GUI to focus on relevant network activity.
 
-4. **AI-Powered Analysis**  
-   Analyze the entire set of logs with an integrated LLM (currently powered by Gemini API) for contextual and intelligent insights.
+- 🤖 **AI-Powered Analysis**  
+  Analyze logs with an integrated LLM (powered by Gemini API) for contextual insights.
 
-5. **Filtered/Truncated Log Analysis**  
-   Optimize resources by sending only filtered logs to the AI for targeted analysis.
+- 🎯 **Filtered Log Analysis**  
+  Send only filtered logs to the AI to optimize performance and precision.
 
 ---
 
 ## 🔧 Requirements
 
-- **Python**: 3.11 or higher  
+- **Python**: `3.11` or higher  
 - **Zeek** and `zeek-cut` binaries must be installed at:  
   `/usr/local/zeek/bin/`  
-  *(Update the code if your binaries are located elsewhere)*
+  *(You can change this path in the code if needed)*
 
 ---
 
 ## 📦 Python Dependencies
 
-Install the required Python modules using pip:
+Install the required Python modules:
 
 ```bash
 pip install flask werkzeug google-genai markdown
 ```
 
-> Modules like `os`, `subprocess`, and `datetime` are part of the standard library.
+> Note: Modules like `os`, `subprocess`, and `datetime` are part of Python’s standard library.
 
 ---
 
 ## 🔑 Gemini API Key
 
-To enable AI-powered analysis:
+To enable the AI analysis feature:
 
-1. Obtain your [Google Gemini API key](https://ai.google.dev/gemini-api/docs/quickstart).
-2. Set it as an environment variable or directly in the application:
+1. Get your key from [Google Gemini API](https://ai.google.dev/gemini-api/docs/quickstart)
+2. Export it as an environment variable:
 
+```bash
+export GEMINI_API_KEY="your-api-key"
+```
 
-![Zeek Web GUI Screenshot](images/googleapikey.png)
+<img src="images/googleapikey.png" alt="Set Google API Key" width="600"/>
 
 ---
 
 ## 🚀 Usage
 
-1. **Clone the repository:**
+1. **Clone the repository**
 
 ```bash
 git clone https://github.com/Gabbo01/ZeekWG
 cd ZeekWG
 ```
 
-2. **Start the Flask server:**
+2. **Start the Flask server**
 
 ```bash
 python app.py
 ```
 
-3. **Open your browser and navigate to:**
+3. **Open your browser**
 
 ```
 http://localhost:5000
 ```
 
 4. **Upload your `.pcap` / `.pcapng` file**  
-   The logs will be automatically generated and viewable via the web interface.
+   Logs will be generated automatically.
 
-5. **Filter logs** as needed and optionally **run AI analysis**.
+5. **Filter logs and run AI analysis as needed**
 
 ---
 
 ## 💡 Examples
 
-### Example 1: Full Log Analysis with AI
+### ✅ Example 1: Full Log Analysis with AI
 
-1. Upload a `.pcap` file.
-2. Click **"Analizza tutti i log"**.
-3. The LLM will return insights and threat summaries across all logs.
-   
-![Zeek Web GUI Screenshot](images/AIanalysis.png)
+1. Upload a `.pcap` file  
+2. Click **"Analizza tutti i log"**  
+3. The AI provides a complete security overview
 
+<img src="images/AIanalysis.png" alt="AI Analysis Example" width="700"/>
 
-### Example 2: Focused Log Analysis
+---
 
-1. Upload a `.pcap` file.
-2. View the `conn.log` to see detailed logs.
-3. Click **"Applica filtro"** if you want to truncate logs.
+### 🔬 Example 2: Focused Log Analysis
 
-![Zeek Web GUI Screenshot](images/dash2.png)
+1. Upload a `.pcap` file  
+2. Open `conn.log`  
+3. Apply a filter with **"Applica filtro"** and analyze truncated data
 
+<img src="images/dash2.png" alt="Filtered Analysis" width="700"/>
 
 ---
 
@@ -134,17 +141,19 @@ zeek-web-gui-analyzer/
 ├── templates/             # HTML templates
 ├── uploads/               # Uploaded PCAPs
 ├── zeek_logs/             # Zeek-generated logs
-
+├── static/                # JS/CSS/images (if present)
 ```
 
 ---
 
 ## 🤝 Contributing
 
-Feel free to open issues or submit pull requests! Suggestions, bug fixes, or new features are all welcome.
+Contributions are welcome!  
+Open an issue or submit a PR for bugs, improvements, or ideas 💡
 
 ---
 
 ## 📜 License
 
-APACHE 2.0 License. See `LICENSE` for details.
+Licensed under the [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0).  
+See the `LICENSE` file for more details.
