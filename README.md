@@ -142,4 +142,4 @@ Feel free to open issues or submit pull requests! Suggestions, bug fixes, or new
 
 ## 📜 License
 
-MIT License. See `LICENSE` for details.
+APACHE 2.0 License. See `LICENSE` for details.
