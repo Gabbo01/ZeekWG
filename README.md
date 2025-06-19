@@ -118,7 +118,7 @@ http://localhost:5000
 ### Example 2: Focused Log Analysis
 
 1. Upload a `.pcap` file.
-2. Filter the `conn.log` to only show suspicious IPs.
+2. View the `conn.log` to see detailed logs.
 3. Click **"Applica filtro"** if you want to truncate logs.
 
 ![Zeek Web GUI Screenshot](images/dash2.png)
