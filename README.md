@@ -109,7 +109,7 @@ http://localhost:5000
 ### Example 1: Full Log Analysis with AI
 
 1. Upload a `.pcap` file.
-2. Click **"Analyze All Logs"**.
+2. Click **"Analizza tutti i log"**.
 3. The LLM will return insights and threat summaries across all logs.
    
 ![Zeek Web GUI Screenshot](images/AIanalysis.png)
@@ -117,9 +117,9 @@ http://localhost:5000
 
 ### Example 2: Focused Log Analysis
 
-1. Filter the `conn.log` to only show suspicious IPs.
-2. Click **"Analyze Filtered Logs"**.
-3. The AI receives only the relevant entries and returns focused insights.
+1. Upload a `.pcap` file.
+2. Filter the `conn.log` to only show suspicious IPs.
+3. Click **"Applica filtro"** if you want to truncate logs.
 
 ![Zeek Web GUI Screenshot](images/dash2.png)
 
