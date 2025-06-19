@@ -70,9 +70,6 @@ To enable AI-powered analysis:
 
 ![Zeek Web GUI Screenshot](images/googleapikey.png)
 
-
-Or set it in `.env` if you are using one.
-
 ---
 
 ## 🚀 Usage
