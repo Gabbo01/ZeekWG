@@ -75,10 +75,6 @@ To enable the AI analysis feature:
 1. Get your key from [Google Gemini API](https://ai.google.dev/gemini-api/docs/quickstart)
 2. Export it as an environment variable:
 
-```bash
-export GEMINI_API_KEY="your-api-key"
-```
-
 <img src="images/googleapikey.png" alt="Set Google API Key" width="600"/>
 
 ---
@@ -127,7 +123,7 @@ http://localhost:5000
 
 1. Upload a `.pcap` file  
 2. Open `conn.log`  
-3. Apply a filter with **"Applica filtro"** and analyze truncated data
+3. Apply a filter with **"Applica filtri"** and analyze truncated data
 
 <img src="images/dash2.png" alt="Filtered Analysis" width="700"/>
 
