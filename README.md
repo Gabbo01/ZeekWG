@@ -67,9 +67,9 @@ To enable AI-powered analysis:
 1. Obtain your [Google Gemini API key](https://ai.google.dev/gemini-api/docs/quickstart).
 2. Set it as an environment variable or directly in the application:
 
-```bash
-export GEMINI_API_KEY="your-api-key"
-```
+
+![Zeek Web GUI Screenshot](images/googleapikey.png)
+
 
 Or set it in `.env` if you are using one.
 
@@ -80,8 +80,8 @@ Or set it in `.env` if you are using one.
 1. **Clone the repository:**
 
 ```bash
-git clone https://github.com/yourusername/zeek-web-gui-analyzer.git
-cd zeek-web-gui-analyzer
+git clone https://github.com/Gabbo01/ZeekWG
+cd ZeekWG
 ```
 
 2. **Start the Flask server:**
@@ -110,6 +110,9 @@ http://localhost:5000
 1. Upload a `.pcap` file.
 2. Click **"Analyze All Logs"**.
 3. The LLM will return insights and threat summaries across all logs.
+   
+![Zeek Web GUI Screenshot](images/AIanalysis.png)
+
 
 ### Example 2: Focused Log Analysis
 
@@ -117,19 +120,20 @@ http://localhost:5000
 2. Click **"Analyze Filtered Logs"**.
 3. The AI receives only the relevant entries and returns focused insights.
 
+![Zeek Web GUI Screenshot](images/dash2.png)
+
+
 ---
 
 ## 📁 Project Structure
 
 ```
 zeek-web-gui-analyzer/
-├── app.py                 # Main Flask application
+├── app.py                 # Main Python Flask application
 ├── templates/             # HTML templates
-├── static/                # CSS, JS, and images
 ├── uploads/               # Uploaded PCAPs
-├── logs/                  # Zeek-generated logs
-├── helpers/               # Log parsing and AI logic
-└── README.md              # Project documentation
+├── zeek_logs/             # Zeek-generated logs
+
 ```
 
 ---
