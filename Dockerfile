@@ -14,7 +14,7 @@ RUN apt-get update && \
 # Add Zeek repository
 RUN echo "deb http://download.opensuse.org/repositories/security:/zeek/xUbuntu_22.04/ /" | tee /etc/apt/sources.list.d/security:zeek.list \
  && curl -fsSL https://download.opensuse.org/repositories/security:zeek/xUbuntu_22.04/Release.key | gpg --dearmor -o /etc/apt/trusted.gpg.d/security_zeek.gpg
- 
+
 # Install Zeek
 RUN apt update
 RUN apt install -y zeek
@@ -24,6 +24,9 @@ WORKDIR /app
 COPY app/ /app/
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
+
+RUN mkdir uploads
+RUN mkdir zeek_logs 
 
 # Install Python dependencies
 RUN pip3 install flask werkzeug google-genai markdown
