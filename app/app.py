@@ -412,4 +412,4 @@ def analyze_filtered_logs(log_filename):
 if __name__ == '__main__':
     os.makedirs(UPLOAD_FOLDER, exist_ok=True)
     os.makedirs(ZEEK_LOGS_FOLDER, exist_ok=True)
-    app.run(debug=True,port=5000)
+    app.run(debug=True,host="0.0.0.0",port=5000)
