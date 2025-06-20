@@ -63,7 +63,7 @@ def allowed_file(filename):
 
 def get_zeek_log_columns(log_path):
     # print(f"DEBUG: Tentativo di estrarre colonne da: {log_path}")
-    zeek_cut_path = "/usr/local/zeek/bin/zeek-cut" #OR YOUR ZEEK-CUT BINARY PATH
+    zeek_cut_path = "/usr/local/zeek/bin/zeek-cut"
     
     try:
         with open(log_path, 'r', encoding='utf-8', errors='ignore') as f:
@@ -412,4 +412,4 @@ def analyze_filtered_logs(log_filename):
 if __name__ == '__main__':
     os.makedirs(UPLOAD_FOLDER, exist_ok=True)
     os.makedirs(ZEEK_LOGS_FOLDER, exist_ok=True)
-    app.run(debug=True)
+    app.run(debug=True,host="0.0.0.0",port=5000)
