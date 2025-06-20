@@ -10,10 +10,8 @@ RUN apt-get update && \
         bison flex swig 
 
 # Install Zeek
-RUN echo 'deb http://download.opensuse.org/repositories/security:/zeek/xUbuntu_22.04/ /' |  tee /etc/apt/sources.list.d/security:zeek.list
-RUN curl -fsSL https://download.opensuse.org/repositories/security:zeek/xUbuntu_22.04/Release.key | gpg --dearmor |  tee /etc/apt/trusted.gpg.d/security_zeek.gpg > /dev/null
 RUN apt update
-RUN apt install -y zeek-6.0
+RUN apt install -y zeek
 
 # Create app directory and copy files
 WORKDIR /app
