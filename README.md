@@ -33,7 +33,7 @@
 - 📁 **PCAP/PCAPNG Upload**  
   Easily upload `.pcap` or `.pcapng` files through the web interface.
 
-- ⚙️ **Automatic Log Generation with Zeek**  
+- ⚙️ **Automatic Log Generation with [Zeek](https://docs.zeek.org/en/master/about.html)**  
   Uploaded files are processed using Zeek, generating 20+ types of logs.
 
 - 🔍 **Log Filtering Interface**  
