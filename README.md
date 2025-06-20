@@ -45,26 +45,6 @@
 - 🎯 **Filtered Log Analysis**  
   Send only filtered logs to the AI to optimize performance and precision.
 
----
-
-## 🔧 Requirements
-
-- **Python**: `3.11` or higher  
-- **Zeek** and `zeek-cut` binaries must be installed at:  
-  `/usr/local/zeek/bin/`  
-  *(You can change this path in the code if needed)*
-
----
-
-## 📦 Python Dependencies
-
-Install the required Python modules:
-
-```bash
-pip install flask werkzeug google-genai markdown
-```
-
-> Note: Modules like `os`, `subprocess`, and `datetime` are part of Python’s standard library.
 
 ---
 
@@ -73,38 +53,41 @@ pip install flask werkzeug google-genai markdown
 To enable the AI analysis feature:
 
 1. Get your key from [Google Gemini API](https://ai.google.dev/gemini-api/docs/quickstart)
-2. Export it as an environment variable:
+2. Put it in /app/app.py file
 
 <img src="images/googleapikey.png" alt="Set Google API Key" width="600"/>
 
 ---
-
 ## 🚀 Usage
 
-1. **Clone the repository**
+1.  **Clone the repository**
 
-```bash
-git clone https://github.com/Gabbo01/ZeekWG
-cd ZeekWG
-```
+    ```bash
+    git clone [https://github.com/Gabbo01/ZeekWG](https://github.com/Gabbo01/ZeekWG)
+    cd ZeekWG
+    ```
 
-2. **Start the Flask server**
+2.  **Build and start services with Docker Compose**
 
-```bash
-python app.py
-```
+    Ensure you have **Docker** and **Docker Compose** installed on your system.
 
-3. **Open your browser**
+    ```bash
+    docker compose build
+    docker compose up -d 
+    ```
 
-```
-http://localhost:5000
-```
+    The `docker compose build` command will create the necessary Docker images (or rebuild them if there have been changes). Subsequently, `docker compose up -d` will start the Flask server and any other services defined in your `docker-compose.yml` file in the background.
 
-4. **Upload your `.pcap` / `.pcapng` file**  
-   Logs will be generated automatically.
+3.  **Open your browser**
 
-5. **Filter logs and run AI analysis as needed**
+    ```
+    http://localhost:5000
+    ```
 
+4.  **Upload your `.pcap` / `.pcapng` file**
+    Logs will be generated automatically.
+
+5.  **Filter logs and run AI analysis as needed**
 ---
 
 ## 💡 Examples
