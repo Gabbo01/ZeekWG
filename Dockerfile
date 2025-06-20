@@ -9,6 +9,12 @@ RUN apt-get update && \
         libssl-dev python3 python3-pip python3-dev zlib1g-dev \
         bison flex swig 
 
+
+
+# Add Zeek repository
+RUN echo "deb http://download.opensuse.org/repositories/security:/zeek/xUbuntu_22.04/ /" | tee /etc/apt/sources.list.d/security:zeek.list \
+ && curl -fsSL https://download.opensuse.org/repositories/security:zeek/xUbuntu_22.04/Release.key | gpg --dearmor -o /etc/apt/trusted.gpg.d/security_zeek.gpg
+ 
 # Install Zeek
 RUN apt update
 RUN apt install -y zeek
