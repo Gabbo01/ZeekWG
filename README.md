@@ -115,12 +115,12 @@ To enable the AI analysis feature:
 ## 📁 Project Structure
 
 ```
-zeek-web-gui-analyzer/
+app/
 ├── app.py                 # Main Python Flask application
 ├── templates/             # HTML templates
 ├── uploads/               # Uploaded PCAPs
 ├── zeek_logs/             # Zeek-generated logs
-├── static/                # JS/CSS/images (if present)
+
 ```
 
 ---
