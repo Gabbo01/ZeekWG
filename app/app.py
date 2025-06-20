@@ -63,7 +63,7 @@ def allowed_file(filename):
 
 def get_zeek_log_columns(log_path):
     # print(f"DEBUG: Tentativo di estrarre colonne da: {log_path}")
-    zeek_cut_path = "/usr/local/zeek/bin/zeek-cut"
+    zeek_cut_path = "/opt/zeek/bin/zeek-cut"
     
     try:
         with open(log_path, 'r', encoding='utf-8', errors='ignore') as f:
@@ -190,7 +190,7 @@ def process_pcap(filename):
 
     try:
         flash(f'Avvio processamento Zeek per {filename}...')
-        zeek_path = "/usr/local/zeek/bin/zeek"
+        zeek_path = "/opt/zeek/bin/zeek"
         result = subprocess.run(
             [zeek_path, "-C", "-r", os.path.join(original_cwd, pcap_path)],
             capture_output=True,
@@ -242,7 +242,7 @@ def view_log(log_filename):
         
         if selected_columns:
             try:
-                zeek_cut_path = "/usr/local/zeek/bin/zeek-cut"
+                zeek_cut_path = "/opt/zeek/bin/zeek-cut"
                 with open(log_path, 'r', encoding='utf-8', errors='ignore') as log_file_stdin:
                     zeek_cut_command = [zeek_cut_path, "-m"] + selected_columns
                     print(f"command view: {zeek_cut_command}")
@@ -376,13 +376,13 @@ def analyze_filtered_logs(log_filename):
             if selected_columns:
 
                 try:
-                    zeek_cut_path = "/usr/local/zeek/bin/zeek-cut"
+                    zeek_cut_path = "/opt/zeek/bin/zeek-cut"
                     sel=selected_columns[0].replace('[',"").replace(']',"").replace("'","").replace(",","")
                     fields = ["-m"]
                     for i in sel.split(" "):
                         fields.append(i)
                     
-                    cmd = ["/usr/local/zeek/bin/zeek-cut"] + fields
+                    cmd = ["/opt/zeek/bin/zeek-cut"] + fields
 
                     with open(log_path, "rb") as infile:
                         process = subprocess.Popen(
