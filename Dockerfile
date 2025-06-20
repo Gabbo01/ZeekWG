@@ -1,7 +1,7 @@
 FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
-ENV PATH="/usr/local/zeek/bin:$PATH"
+ENV PATH="/opt/zeek/bin:$PATH"
 
 # Install system dependencies
 RUN apt-get update && \
