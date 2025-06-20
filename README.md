@@ -76,8 +76,6 @@ To enable the AI analysis feature:
     docker compose up -d 
     ```
 
-    The `docker compose build` command will create the necessary Docker images (or rebuild them if there have been changes). Subsequently, `docker compose up -d` will start the Flask server and any other services defined in your `docker-compose.yml` file in the background.
-
 3.  **Open your browser**
 
     ```
