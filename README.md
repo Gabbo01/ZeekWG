@@ -63,7 +63,7 @@ To enable the AI analysis feature:
 1.  **Clone the repository**
 
     ```bash
-    git clone [https://github.com/Gabbo01/ZeekWG](https://github.com/Gabbo01/ZeekWG)
+    git clone https://github.com/Gabbo01/ZeekWG
     cd ZeekWG
     ```
 
